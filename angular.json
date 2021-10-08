@@ -3,5 +3,268 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ng-loading-button": {
+      "projectType": "library",
+      "root": "projects/ng-loading-button",
+      "sourceRoot": "projects/ng-loading-button/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ng-loading-button/tsconfig.lib.json",
+            "project": "projects/ng-loading-button/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-loading-button/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-loading-button/src/test.ts",
+            "tsConfig": "projects/ng-loading-button/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-loading-button/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-loading-button/tsconfig.lib.json",
+              "projects/ng-loading-button/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "ng-loading-button-tester": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/ng-loading-button-tester",
+      "sourceRoot": "projects/ng-loading-button-tester/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-loading-button-tester",
+            "index": "projects/ng-loading-button-tester/src/index.html",
+            "main": "projects/ng-loading-button-tester/src/main.ts",
+            "polyfills": "projects/ng-loading-button-tester/src/polyfills.ts",
+            "tsConfig": "projects/ng-loading-button-tester/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ng-loading-button-tester/src/favicon.ico",
+              "projects/ng-loading-button-tester/src/assets"
+            ],
+            "styles": ["projects/ng-loading-button-tester/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-loading-button-tester/src/environments/environment.ts",
+                  "with": "projects/ng-loading-button-tester/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-loading-button-tester:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-loading-button-tester:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-loading-button-tester:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-loading-button-tester/src/test.ts",
+            "polyfills": "projects/ng-loading-button-tester/src/polyfills.ts",
+            "tsConfig": "projects/ng-loading-button-tester/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-loading-button-tester/karma.conf.js",
+            "assets": [
+              "projects/ng-loading-button-tester/src/favicon.ico",
+              "projects/ng-loading-button-tester/src/assets"
+            ],
+            "styles": ["projects/ng-loading-button-tester/src/styles.scss"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-loading-button-tester/tsconfig.app.json",
+              "projects/ng-loading-button-tester/tsconfig.spec.json",
+              "projects/ng-loading-button-tester/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ng-loading-button-tester/e2e/protractor.conf.js",
+            "devServerTarget": "ng-loading-button-tester:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-loading-button-tester:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "ng-loading-button-tester10": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/ng-loading-button-tester10",
+      "sourceRoot": "projects/ng-loading-button-tester10/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng-loading-button-tester10",
+            "index": "projects/ng-loading-button-tester10/src/index.html",
+            "main": "projects/ng-loading-button-tester10/src/main.ts",
+            "polyfills": "projects/ng-loading-button-tester10/src/polyfills.ts",
+            "tsConfig": "projects/ng-loading-button-tester10/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ng-loading-button-tester10/src/favicon.ico",
+              "projects/ng-loading-button-tester10/src/assets"
+            ],
+            "styles": ["projects/ng-loading-button-tester10/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng-loading-button-tester10/src/environments/environment.ts",
+                  "with": "projects/ng-loading-button-tester10/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng-loading-button-tester10:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng-loading-button-tester10:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng-loading-button-tester10:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-loading-button-tester10/src/test.ts",
+            "polyfills": "projects/ng-loading-button-tester10/src/polyfills.ts",
+            "tsConfig": "projects/ng-loading-button-tester10/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-loading-button-tester10/karma.conf.js",
+            "assets": [
+              "projects/ng-loading-button-tester10/src/favicon.ico",
+              "projects/ng-loading-button-tester10/src/assets"
+            ],
+            "styles": ["projects/ng-loading-button-tester10/src/styles.css"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-loading-button-tester10/tsconfig.app.json",
+              "projects/ng-loading-button-tester10/tsconfig.spec.json",
+              "projects/ng-loading-button-tester10/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ng-loading-button-tester10/e2e/protractor.conf.js",
+            "devServerTarget": "ng-loading-button-tester10:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng-loading-button-tester10:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ng-loading-button"
 }

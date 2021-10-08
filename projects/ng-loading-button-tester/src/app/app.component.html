@@ -1,0 +1,183 @@
+<div class="body">
+  <div>
+    <button>Test</button>
+  </div>
+
+  <div>
+    <button class="btn btn-success">Success</button>
+  </div>
+
+  <div>
+    <ng-loading-button
+      id="successBtn"
+      class="btn btn-success"
+      (click)="fetch('successBtn')"
+      loadingType="spinner"
+      >Success</ng-loading-button
+    >
+  </div>
+
+  <div>
+    <ng-loading-button
+      id="defaultBtn"
+      (click)="fetch('defaultBtn')"
+      loadingType="spinner"
+      loadingText="Loading..."
+      disabled
+      style="
+        background-color: aqua;
+        border: none;
+        color: black;
+        padding: 7.5px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      "
+      >Default Button 'button'</ng-loading-button
+    >
+  </div>
+
+  <div>
+    <ng-loading-button
+      id="defaultBtn2"
+      (click)="fetch('defaultBtn2')"
+      loadingType="spinner"
+      loadingText="Loading..."
+      class="defaultButton"
+      >Default Button 'button'</ng-loading-button
+    >
+  </div>
+
+  <div>
+    <button
+      id="defaultBtn3"
+      (click)="fetch('defaultBtn3')"
+      class="defaultButton"
+    >
+      Default Button 'button'
+    </button>
+  </div>
+
+  <div>
+    <button
+      id="defaultBtn4"
+      (click)="fetch('defaultBtn4')"
+      class="buttonClass1"
+    >
+      Default Button 2 'button'
+    </button>
+  </div>
+
+  <div>
+    <ng-loading-button
+      id="defaultBtn5"
+      (click)="fetch('defaultBtn5')"
+      loadingType="text"
+      class="buttonClass1"
+      >Default Button 3 'button'</ng-loading-button
+    >
+  </div>
+
+  <div>
+    <ng-loading-button
+      id="defaultBtn6"
+      style="
+        width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      "
+      (click)="fetch('defaultBtn6')"
+      loadingType="text"
+      loadingText="Loading."
+      class="btn btn-danger"
+      >Default Button 4</ng-loading-button
+    >
+  </div>
+</div>
+<!-- <div>
+  <ng-loading-button
+    id="secondaryBtn"
+    class="btn btn-secondary"
+    loadingType="spinner"
+    (click)="secondaryFetch()"
+    >Secondary</ng-loading-button
+  >
+</div>
+
+<div>
+  <ng-loading-button
+    id="lightBtn"
+    class="btn btn-light"
+    loadingType="spinner"
+    (click)="lightFetch()"
+    >Light</ng-loading-button
+  >
+</div>
+
+<div>
+  <ng-loading-button
+    id="primaryBtn"
+    class="btn btn-primary"
+    (click)="primaryFetch()"
+    loadingType="spinner"
+    >Primary</ng-loading-button
+  >
+</div>
+
+<div>
+  <ng-loading-button
+    id="darkBtn"
+    class="btn btn-dark"
+    (click)="darkFetch()"
+    loadingType="spinner"
+    >Dark</ng-loading-button
+  >
+</div>
+
+<div>
+  <ng-loading-button
+    id="dangerBtn"
+    class="btn btn-danger"
+    (click)="dangerFetch()"
+    loadingType="spinner"
+    >Danger</ng-loading-button
+  >
+</div> -->
+
+<!-- <div>
+  <ng-loading-button
+    id="infoBtn"
+    class="btn btn-info"
+    (click)="infoFetch()"
+    loadingType="spinner"
+    >Info</ng-loading-button
+  >
+</div>
+
+<div>
+  <ng-loading-button
+    id="bootstrapTestTextBtn"
+    class="btn btn-primary"
+    (click)="bootstrapTestTextFetch()"
+    loadingType="text"
+    >NG Loading Bootstrap Text</ng-loading-button
+  >
+</div>
+
+<div>
+  <ng-loading-button
+    id="bootstrapTestSpinnerBtn"
+    class="btn btn-warning"
+    (click)="bootstrapTestSpinnerFetch()"
+    loadingType="spinner"
+    >NG Loading Bootstrap Spinner</ng-loading-button
+  >
+</div> -->
+
+<!-- <div>
+  <button type="button" class="btn btn-primary">Official Bootstrap</button>
+</div> -->
+
+<br />

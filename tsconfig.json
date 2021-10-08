@@ -10,6 +10,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "ng-loading-button": [
+        "dist/ng-loading-button/ng-loading-button",
+        "dist/ng-loading-button"
+      ]
+    },
     "target": "es2015",
     "module": "es2020",
     "lib": [

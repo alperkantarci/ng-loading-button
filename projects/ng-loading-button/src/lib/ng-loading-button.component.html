@@ -1,0 +1,9 @@
+<button [style]="style">
+  <ng-content *ngIf="!loading"></ng-content>
+  <div
+    *ngIf="loading"
+    [style.visibility]="loadingType === 'spinner' ? 'hidden' : 'visible'"
+  >
+    {{ loadingType === "spinner" ? innerText : loadingText }}
+  </div>
+</button>
